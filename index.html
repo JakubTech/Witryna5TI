@@ -4,29 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Strona internetowa</title>
-    <style>
-        body {
-            background-color: orange;
-        }
-        #main {
-            margin-top: 200px;
-        }
-        .pole {
-            font-size: 50px;
-            border: 3px silver solid;
-            text-align: center;
-            width: 50%;
-            margin-left: auto;
-            margin-right: auto;
-            background-color:gold;
-            margin-top: 20px;
-        }
-        .pole:hover {
-            background-color:darkblue;
-            color: white;
-            border: 3px black solid;
-        }
-    </style>
+    <link rel="stylesheet" href="styl.css">
+    <script src="skrypt.js"></script>
 </head>
 <body>
     <div id="main">
@@ -37,5 +16,41 @@
             <img src="heart-png-38780.png" alt="" width="30px" height="30px">
         </div></div>
     </div>
+    <div id="dlaKalkulatora">
+        <div id="kalkulator">
+            <div id="row1">
+                <input type="text" name="display" id="display" maxlength="13" readonly>
+            </div>
+            <div id="row2">
+                <input type="button" class="przyciski1" id="przyciskAC" value="AC" onclick="wyczyscEkran()"></input>
+                <input type="button" class="przyciski1" id="przyciskPotega" value="^" onclick="dodajDoWyniku('**')"></input>
+                <input type="button" class="przyciski1" id="przyciskProcenty" value="%" onclick="dodajDoWyniku('%')"></input>
+                <input type="button" class="przyciski2" id="przyciskDzielenie" value="÷" onclick="dodajDoWyniku('/')"></input>
+            </div>
+            <div id="row3">
+                <input type="button" class="przyciski3" id="przycisk7" value="7" onclick="dodajDoWyniku('7')"></input>
+                <input type="button" class="przyciski3" id="przycisk8" value="8" onclick="dodajDoWyniku('8')"></input>
+                <input type="button" class="przyciski3" id="przycisk9" value="9" onclick="dodajDoWyniku('9')"></input>
+                <input type="button" class="przyciski2" id="przyciskMnozenie" value="*" onclick="dodajDoWyniku('*')"></input>
+            </div>
+            <div id="row4">
+                <input type="button" class="przyciski3" id="przycisk4" value="4" onclick="dodajDoWyniku('4')"></input>
+                <input type="button" class="przyciski3" id="przycisk5" value="5" onclick="dodajDoWyniku('5')"></input>
+                <input type="button" class="przyciski3" id="przycisk6" value="6" onclick="dodajDoWyniku('6')"></input>
+                <input type="button" class="przyciski2" id="przyciskOdejmowanie" value="-" onclick="dodajDoWyniku('-')"></input>
+            </div>
+            <div id="row5">
+                <input type="button" class="przyciski3" id="przycisk1" value="1" onclick="dodajDoWyniku('1')"></input>
+                <input type="button" class="przyciski3" id="przycisk2" value="2" onclick="dodajDoWyniku('2')"></input>
+                <input type="button" class="przyciski3" id="przycisk3" value="3" onclick="dodajDoWyniku('3')"></input>
+                <input type="button" class="przyciski2" id="przyciskDodawanie" value="+" onclick="dodajDoWyniku('+')"></input>
+            </div>
+            <div id="row6">
+                <input type="button" class="przyciski3" id="przycisk0" value="0" onclick="dodajDoWyniku('0')"></input>
+                <input type="button" class="przyciski3" id="przyciskKropka" value="." onclick="dodajDoWyniku('.')"></input>
+                <input type="submit" class="przyciski2" id="przyciskWynik" value="=" onclick="oblicz()"></input>
+            </div>
+        </div>
+        </div>
 </body>
 </html>
