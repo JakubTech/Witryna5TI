@@ -1,56 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strona internetowa</title>
+    <title>Rezerwacja autokaru PKS Biłgoraj</title>
     <link rel="stylesheet" href="styl.css">
-    <script src="skrypt.js"></script>
+    <script>
+        function wyswietlAlert() {
+            alert("Miejsce zostało zarezerwowane!");
+        }
+    </script>
 </head>
 <body>
-    <div id="main">
-        <div class="pole">Jakub Nizio</div>
-        <div class="pole">Witryny i aplikacje internetowe</div>
-        <div class="pole">2023</div>
-        <div class="pole"><div>Jakub Sałach
-            <img src="heart-png-38780.png" alt="" width="30px" height="30px">
-        </div></div>
-    </div>
-    <div id="dlaKalkulatora">
-        <div id="kalkulator">
-            <div id="row1">
-                <input type="text" name="display" id="display" maxlength="13" readonly>
-            </div>
-            <div id="row2">
-                <input type="button" class="przyciski1" id="przyciskAC" value="AC" onclick="wyczyscEkran()"></input>
-                <input type="button" class="przyciski1" id="przyciskPotega" value="^" onclick="dodajDoWyniku('**')"></input>
-                <input type="button" class="przyciski1" id="przyciskProcenty" value="%" onclick="dodajDoWyniku('%')"></input>
-                <input type="button" class="przyciski2" id="przyciskDzielenie" value="÷" onclick="dodajDoWyniku('/')"></input>
-            </div>
-            <div id="row3">
-                <input type="button" class="przyciski3" id="przycisk7" value="7" onclick="dodajDoWyniku('7')"></input>
-                <input type="button" class="przyciski3" id="przycisk8" value="8" onclick="dodajDoWyniku('8')"></input>
-                <input type="button" class="przyciski3" id="przycisk9" value="9" onclick="dodajDoWyniku('9')"></input>
-                <input type="button" class="przyciski2" id="przyciskMnozenie" value="*" onclick="dodajDoWyniku('*')"></input>
-            </div>
-            <div id="row4">
-                <input type="button" class="przyciski3" id="przycisk4" value="4" onclick="dodajDoWyniku('4')"></input>
-                <input type="button" class="przyciski3" id="przycisk5" value="5" onclick="dodajDoWyniku('5')"></input>
-                <input type="button" class="przyciski3" id="przycisk6" value="6" onclick="dodajDoWyniku('6')"></input>
-                <input type="button" class="przyciski2" id="przyciskOdejmowanie" value="-" onclick="dodajDoWyniku('-')"></input>
-            </div>
-            <div id="row5">
-                <input type="button" class="przyciski3" id="przycisk1" value="1" onclick="dodajDoWyniku('1')"></input>
-                <input type="button" class="przyciski3" id="przycisk2" value="2" onclick="dodajDoWyniku('2')"></input>
-                <input type="button" class="przyciski3" id="przycisk3" value="3" onclick="dodajDoWyniku('3')"></input>
-                <input type="button" class="przyciski2" id="przyciskDodawanie" value="+" onclick="dodajDoWyniku('+')"></input>
-            </div>
-            <div id="row6">
-                <input type="button" class="przyciski3" id="przycisk0" value="0" onclick="dodajDoWyniku('0')"></input>
-                <input type="button" class="przyciski3" id="przyciskKropka" value="." onclick="dodajDoWyniku('.')"></input>
-                <input type="submit" class="przyciski2" id="przyciskWynik" value="=" onclick="oblicz()"></input>
+    <section class="baner">
+        <div class="container">
+            <h1>Witamy w rezerwacji miejsca w autokarze PKS Biłgoraj</h1>
+        </div>
+    </section>
+    <section class="lewy">
+        <div class="container">
+            <img src="autokar.jpg" alt="autokar pks biłgoraj">
+        </div>
+    </section>
+    <section class="prawy">
+        <div class="container">
+            <h4>Z nami bezpiecznie trafisz do domu w każdym stanie nietrzeźwości!</h4>
+            <ol>
+                <li>Biłgoraj od 40 zł</li>
+                <li>Zwierzyniec od 30 zł</li>
+                <li>Szczebrzeszyn od 50 zł</li>
+            </ol>
+        </div>
+    </section>
+    <section class="dolny">
+        <div class="container">
+            <h2>Zarezerwuj miejsce on-line</h2>
+            <form action="" id="rezerwacja">
+                <label for="dane">Imię i nazwisko:</label> <br>
+                <input type="text" class="inputy" name="dane" id="dane" required> <br>
+                <label for="data">Data:</label> <br>
+                <input type="text" class="inputy" name="data" id="data" required pattern="\d{4}-\d{2}-\d{2}" placeholder="rrrr-mm-dd"> <br>
+                <label for="trzeźwość">Czy będziesz trzeźwy?</label><br>
+                <span style="font-weight: bold;">TAK</span><input type="radio" name="trzeźwość" id="tak" value="tak" checked><span style="font-weight: bold;">NIE</span> <input type="radio" name="trzeźwość" id="nie" value="nie"> <br>
+                <label for="siedzenie">Gdzie chcesz siedzieć?</label> <br>
+                <select name="siedzenie" id="siedzenie">
+                    <option value="z przodu">Z przodu</option>
+                    <option value="z tyłu">Z tyłu</option>
+                    <option value="po środku">Po środku</option>
+                </select><br>
+                <input type="checkbox" name="zgoda" id="zgoda" checked><span style="font-weight: bold;">Zgadzam się na przetwarzanie danych osobowych</span> <br>
+                <input type="reset" value="Wyczyść"><input type="button" value="Rezerwuj" onclick="wyswietlAlert()">
+            </form>
+        </div>
+    </section>
+    <section class="stopka">
+        <div class="container">
+            <div>
+            Po więcej informacji zapraszamy tutaj: <br> <br>
+            <iframe title="obrazek" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1268.0868923517712!2d22.720667588997255!3d50.53093814290192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472335eb23e1a45b%3A0xb3a3e173f32bef71!2sPKS%20w%20Bi%C5%82goraju%20Sp.%20z%20o.o.!5e0!3m2!1spl!2spl!4v1699989148234!5m2!1spl!2spl" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
-        </div>
+    </section>
 </body>
 </html>
